@@ -1,50 +1,42 @@
-# Apártalo — <nombre del negocio de tu variante>
+# Evidencia 1 — Apártalo: tu primer sprint de verdad
+## Variante 2: Clínica Veterinaria Huellitas
 
-> Repositorio de la **Evidencia 1** de *Proyecto de ingeniería de software* (Tecmilenio, CRN 13241).
-> Sustituye todo lo que está entre `< >` y borra las líneas de ayuda que empiezan con `>`.
+### Descripción del Proyecto
+Sistema de gestión de citas y reglas de negocio automatizadas para la clínica **Veterinaria Huellitas**, desarrollado bajo la metodología ágil Scrum.
 
-| Dato | |
-|---|---|
-| Estudiante | `<tu nombre>` |
-| Matrícula | `<tu matrícula>` |
-| Variante | `<número y nombre, por ejemplo: 1 — Barbería Filo>` |
-| Project (tablero) | `<enlace a tu GitHub Project>` |
+---
 
-## Visión del producto
-> 🎩 PO · Ejercicio 1, punto 1. De 3 a 5 líneas: qué es la app, para quién y qué problema resuelve.
+### Bitácora de Roles Scrum (Una sola persona)
+Para este sprint, se asumieron y ejecutaron formalmente los siguientes roles y responsabilidades:
 
-<tu visión>
+1. **Product Owner (PO):**
+   - Definición, análisis y priorización del Product Backlog.
+   - Creación de las Historias de Usuario (`HU01`, `HU02`, `HU03`) con sus respectivos criterios de aceptación detallados en los Issues de GitHub.
+   - Elaboración de reglas de negocio para tarifas de consulta, recargos por peso, descuentos por múltiples mascotas y políticas de cancelación.
 
-## Mi equipo Scrum (los tres sombreros)
+2. **Scrum Master (SM):**
+   - Configuración inicial del marco de trabajo en GitHub (creación del repositorio a partir de la plantilla y configuración del tablero Kanban "Sprint 1 - Veterinaria Huellitas").
+   - Monitoreo del flujo de avance en las columnas del tablero (`Backlog`, `To Do`, `In Progress`, `Done`).
+   - Eliminación de impedimentos técnicos y facilitación de la ceremonia del sprint.
 
-| Sombrero | Lo que hago con él en este proyecto |
-|---|---|
-| 🎩 PO | `<...>` |
-| 🎩 SM | `<...>` |
-| 🎩 Desarrollador | `<...>` |
+3. **Desarrollador (Dev):**
+   - Implementación de la lógica de negocio en Python dentro del archivo `src/apartalo/reglas.py` (`R1` y `R2`).
+   - Desarrollo de pruebas unitarias robustas utilizando `pytest` en la carpeta de pruebas para garantizar el cumplimiento de los criterios de aceptación.
+   - Gestión de control de versiones y commits descriptivos etiquetados por rol.
 
-## Cómo está organizado este repositorio
+---
 
-| Carpeta o archivo | Qué contiene | Ejercicio |
-|---|---|---|
-| `docs/01_vision_y_problema.md` | Paradigmas, manifiesto, requisito vs. solución, incertidumbre | 1 |
-| Issues `historia` y `epica` + `docs/02_backlog.md` | Product backlog, plantilla invertida, glosario, iceberg | 2 |
-| `docs/03_tablero.md` | Columnas, límites WIP, políticas y prácticas de kanban | 3 |
-| `docs/04_refinamiento.md` + `features/` | Grooming, carga máxima, división, escenarios BDD, tabla FIT | 4 |
-| `docs/05_sprint1.md` | Planeación, bitácora, revisión y retrospectiva | 5 |
-| `src/apartalo/` + `tests/` + `docs/06_tdd.md` | Código, pruebas y ciclos de TDD | 6 |
-| Issues `rnf` + `docs/07_rnf.md` | Requisitos no funcionales | 7 |
-| `metricas/` + `docs/08_metricas.md` | Fotografía del tablero y consultas SQL | 8 |
-| `ENTREGA.md` | Enlaces a cada evidencia | Entrega |
+### Planificación y Capacidad del Sprint
+- **Velocidad de referencia estimada:** 22 puntos de historia.
+- **Historias seleccionadas para el Sprint 1:**
+  - `HU01`: Cálculo del total de la cita con recargos y descuentos (R1).
+  - `HU02`: Aplicación de cargos por cancelación tardía o inasistencia (R2).
+- **Backlog (Siguiente Sprint):**
+  - `HU03`: Control de cupo máximo de citas por hora (R3).
 
-## Cómo correr las pruebas
+---
 
+### Ejecución de Pruebas Unitarias
+Las pruebas unitarias implementadas se ejecutan y validan localmente mediante el comando:
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # En Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-pytest                           # todas las pruebas
-pytest -m aceptacion             # solo la suite de aceptación
-pytest -m unitaria               # solo las unitarias
-pytest -m rnf                    # solo las de requisitos no funcionales
-```
+pytest
